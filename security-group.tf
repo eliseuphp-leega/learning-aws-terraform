@@ -3,7 +3,7 @@ resource "aws_security_group" "acesso-ssh" {
   description = "acesso-ssh"
 
   ingress = [{
-    cidr_blocks = var.cidrs_acesso_remoto
+    cidr_blocks = "${var.cidrs_acesso_remoto}"
     from_port   = 22
     protocol    = "tcp"
     to_port     = 22
@@ -20,7 +20,7 @@ resource "aws_security_group" "acesso-ssh-us-east-2" {
   description = "acesso-ssh"
 
   ingress = [{
-    cidr_blocks = var.cidrs_acesso_remoto
+    cidr_blocks = "${var.cidrs_acesso_remoto}"
     from_port   = 22
     protocol    = "tcp"
     to_port     = 22
