@@ -3,7 +3,7 @@ resource "aws_security_group" "acesso-ssh" {
   description = "acesso-ssh"
 
   ingress = [{
-    cidr_blocks = ["191.32.154.79/32"]
+    cidr_blocks = var.cidrs_acesso_remoto
     from_port   = 22
     protocol    = "tcp"
     to_port     = 22
@@ -15,12 +15,12 @@ resource "aws_security_group" "acesso-ssh" {
 }
 
 resource "aws_security_group" "acesso-ssh-us-east-2" {
-  provider = "aws.us-east-2"
+  provider    = "aws.us-east-2"
   name        = "acesso-ssh"
   description = "acesso-ssh"
 
   ingress = [{
-    cidr_blocks = ["191.32.154.79/32"]
+    cidr_blocks = var.cidrs_acesso_remoto
     from_port   = 22
     protocol    = "tcp"
     to_port     = 22
